@@ -1,4 +1,4 @@
-package com.tencoding.wonilblog.model;
+package com.tencoding.wonilblog.dto;
 
 import lombok.Data;
 

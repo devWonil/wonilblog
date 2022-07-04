@@ -20,7 +20,7 @@ let index = {
 		$.ajax({
 			// 서버측에 회원가입 요청
 			type: "POST",
-			url: "/blog/api/user",
+			url: "/auth/joinProc",
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
 			dataType: "json" // 응답이 왔을 때 기본 데이터 타입(Buffered 문자열) => js object 자동변환
@@ -31,7 +31,7 @@ let index = {
 			console.log("textStatus : " + textStatus);
 			console.log("data : " + data);
 			alert("회원가입이 완료되었습니다");
-			location.href = "/blog";
+			location.href = "/";
 		}).fail(function(error){
 			// 통신 실패 시
 			console.log(error);
@@ -49,13 +49,13 @@ let index = {
 		$.ajax({
 			// 회원 로그인 요청
 			type: "POST",
-			url: "/blog/api/user/login",
+			url: "/api/user/login",
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
 		}).done(function(data, textStatus, xhr){
 			alert("로그인이 완료되었습니다")
-			location.href = "/blog"
+			location.href = "/"
 			console.log(data);
 		}).fail(function(error){
 			alert("로그인이 실패했습니다")
